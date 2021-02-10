@@ -8,7 +8,7 @@ export default function Task({
 }) {
   return (
     <div className={`list-item ${state}`} data-testid={`list-item`}>
-      <label className="checkbox">
+      <label className="checkbox" style={{ backgroundColor: "#FFFCEF" }}>
         <input
           type="checkbox"
           defaultChecked={state === "TASK_ARCHIVED"}
@@ -23,10 +23,15 @@ export default function Task({
           value={title}
           readOnly={true}
           placeholder="Input title"
+          style={{ backgroundColor: "#FFFCEF" }}
         />
       </div>
 
-      <div className="actions" onClick={(event) => event.stopPropagation()}>
+      <div
+        className="actions"
+        onClick={(event) => event.stopPropagation()}
+        style={{ backgroundColor: "#FFFCEF" }}
+      >
         {state !== "TASK_ARCHIVED" && (
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a onClick={() => onPinTask(id)}>
